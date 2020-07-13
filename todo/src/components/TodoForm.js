@@ -16,16 +16,27 @@ const TodoForm = (props) => {
         setTodo('');
     }
 
+    const handleClearSubmit = e =>{
+        e.preventDefault();
+        clearTodo()
+    }
+
     return(
-        <form onSubmit={handleSubmit}>
+        <form>
             <input 
                 type="text"
                 name="item"
                 onChange = {handleChanges}
+                value={todo}
                 placeholder ="add and item here"
             />
-            <button type = 'submit'> Add </button>
-            <button onClick={clearTodo}>Clear List</button>
+            <button 
+                onClick={handleSubmit}
+                type ="submit"
+            > 
+            Add 
+            </button>
+            <button onClick={handleClearSubmit}>Clear List</button>
         </form>
         
     )
