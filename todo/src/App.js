@@ -15,10 +15,15 @@ function App() {
     dispatch({ type: "TOGGLE", payload: id})
   }
 
+  const clearTodo = () => {
+    console.log("Cleared")
+    dispatch({type:"CLEAR"})
+  }
+
   return (
     <div className="App">
       <h1>Testing</h1>
-      <TodoForm addTodo = {addTodo}/>
+      <TodoForm addTodo = {addTodo} clearTodo={clearTodo}/>
       <TodoList todoListArray = {state.toDoList} toggleTodo={toggleTodo}/>
     </div>
   );

@@ -40,6 +40,12 @@ export const reducer = (state, action) => {
                     }
                 })
             }
+        case "CLEAR":
+            return{
+                toDoList:state.toDoList.filter(task => {
+                    return task.completed !== true;
+                })
+            }
         default:
             return state;
     }

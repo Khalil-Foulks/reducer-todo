@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 
 const TodoForm = (props) => {
 
-    const { addTodo } = props
+    const { addTodo, clearTodo } = props
 
     const [todo,setTodo] = useState('')
 
-    const handlesChanges = e => {
+    const handleChanges = e => {
         setTodo(e.target.value)
     }
 
@@ -17,21 +17,15 @@ const TodoForm = (props) => {
     }
 
     return(
-        <form onClick={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <input 
                 type="text"
                 name="item"
-                onChange = {handlesChanges}
+                onChange = {handleChanges}
                 placeholder ="add and item here"
             />
-            <button 
-                type = 'submit' 
-                onClick={() => {
-                
-            }}>
-                Add
-            </button>
-            <button>Clear List</button>
+            <button type = 'submit'> Add </button>
+            <button onClick={clearTodo}>Clear List</button>
         </form>
         
     )
