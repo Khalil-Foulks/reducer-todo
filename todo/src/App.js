@@ -11,15 +11,15 @@ function App() {
     dispatch({ type: "ADD", payload: todo});
   }
 
-  const toggleTodo = todo => {
-    dispatch({ type: "TOGGLE", payload: todo})
+  const toggleTodo = id => {
+    dispatch({ type: "TOGGLE", payload: id})
   }
 
   return (
     <div className="App">
       <h1>Testing</h1>
       <TodoForm addTodo = {addTodo}/>
-      <TodoList todoListArray = {state.toDoList}/>
+      <TodoList todoListArray = {state.toDoList} toggleTodo={toggleTodo}/>
     </div>
   );
 }

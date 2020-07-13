@@ -1,14 +1,23 @@
 import React from 'react';
-import TodoCard from './TodoCard';
 
 const TodoList = (props) => {
-    const {todoListArray} = props
+    const {todoListArray, toggleTodo} = props
 
     return(
         <div className="taskList">
-            {todoListArray.map(todo =>(
-                <TodoCard todoList = {todo.item} key = {todo.id} />
-            ))}
+            <div>
+                {
+                    todoListArray.map(task => {
+                        return <div
+                            key = {task.id}
+                            onClick={() => toggleTodo(task.id)}
+                            className={`item${task.completed? " completed" : ""}`}
+                        >
+                            <p> {task.item} </p>
+                        </div>
+                    })
+                }
+            </div>
         </div> 
     )
 }
