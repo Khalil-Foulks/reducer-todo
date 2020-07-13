@@ -5,7 +5,7 @@ const TodoCard = (props) => {
     const { todoList } = props
     console.log(todoList)
 
-    
+
     return (
         <div>
             <p> {todoList} </p>
