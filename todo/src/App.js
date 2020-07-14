@@ -4,7 +4,11 @@ import TodoForm from './components/TodoForm'
 import './App.css';
 import { reducer, initialState } from './reducers/todoReducer';
 
+
 function App() {
+// STEP 2 - Set up state in your component
+
+//Using the `reducer` hook, set up state in your component.
   const [state, dispatch] = useReducer(reducer, initialState); 
 
   const addTodo = todo => {
