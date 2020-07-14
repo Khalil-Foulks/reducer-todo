@@ -22,7 +22,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Testing</h1>
       <TodoForm addTodo = {addTodo} clearTodo={clearTodo}/>
       <TodoList todoListArray = {state.toDoList} toggleTodo={toggleTodo}/>
     </div>

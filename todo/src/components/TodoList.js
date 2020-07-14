@@ -5,7 +5,7 @@ const TodoList = (props) => {
 
     return(
         <div className="taskList">
-            <div>
+            <div className = "wrapper">
                 {
                     todoListArray.map(task => {
                         return <div

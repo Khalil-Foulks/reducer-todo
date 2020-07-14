@@ -13,7 +13,7 @@ export const initialState = {
     ],
 }
 
-console.log(initialState)
+// console.log(initialState)
 
 
 export const reducer = (state, action) => {
